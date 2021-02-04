@@ -40,15 +40,15 @@ main {
 }
 
 .yellow {
-  border-color: #fdca40;
+  border-color: #fdca40 !important;
 }
 
 .blue {
-  border-color: #3772ff;
+  border-color: #3772ff !important;
 }
 
 .red {
-  border-color: #df2935;
+  border-color: #df2935 !important;
 }
 
 .grid {
