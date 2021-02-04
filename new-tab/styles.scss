@@ -32,6 +32,16 @@ main {
   align-items: center;
 }
 
+.yellow {
+  border-color: $yellow;
+}
+.blue {
+  border-color: $blue;
+}
+.red {
+  border-color: $red;
+}
+
 .grid {
   display: grid;
   gap: 12px;

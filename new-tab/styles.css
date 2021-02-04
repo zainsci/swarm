@@ -39,6 +39,18 @@ main {
           align-items: center;
 }
 
+.yellow {
+  border-color: #fdca40;
+}
+
+.blue {
+  border-color: #3772ff;
+}
+
+.red {
+  border-color: #df2935;
+}
+
 .grid {
   display: -ms-grid;
   display: grid;
