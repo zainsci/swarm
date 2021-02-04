@@ -1,0 +1,66 @@
+$dark: #080708;
+$blue: #3772ff;
+$red: #df2935;
+$yellow: #fdca40;
+$text: #e6e8e6;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: $dark;
+  color: $text;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 1280px;
+  max-height: 800px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(6, 180px);
+  grid-template-rows: repeat(4, 180px);
+  grid-template-areas:
+    "one two two three three five"
+    "one two two four four ten"
+    "thirteen 14 15 16 17 18"
+    "21 22 23 24 25 26";
+}
+.box {
+  border-radius: 8px !important;
+  border: 2px solid;
+}
+
+.one {
+  grid-area: one;
+  border-color: $yellow;
+}
+.two {
+  grid-area: two;
+  border-color: $blue;
+}
+.three {
+  grid-area: three;
+  border-color: $yellow;
+}
+.four {
+  grid-area: four;
+  border-color: $yellow;
+}
