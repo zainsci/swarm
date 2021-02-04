@@ -9,5 +9,5 @@ boxes.forEach((box) => {
 // Add Random Images from Media Folder
 const image = document.getElementById("image");
 const img = document.createElement("img");
-img.src = `../media/images/${"1"}.jpg`;
+img.src = `../media/images/${Math.floor(Math.random() * 17)}.jpg`;
 image.appendChild(img);
