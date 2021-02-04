@@ -38,29 +38,25 @@ main {
   grid-template-columns: repeat(6, 180px);
   grid-template-rows: repeat(4, 180px);
   grid-template-areas:
-    "one two two three three five"
-    "one two two four four ten"
-    "thirteen 14 15 16 17 18"
-    "21 22 23 24 25 26";
+    "one two two three three 0"
+    "one two two four four 0"
+    "- - - - - -"
+    "- - - - - -";
 }
 .box {
-  border-radius: 8px !important;
   border: 2px solid;
+  border-radius: 1rem !important;
 }
 
 .one {
   grid-area: one;
-  border-color: $yellow;
 }
 .two {
   grid-area: two;
-  border-color: $blue;
 }
 .three {
   grid-area: three;
-  border-color: $yellow;
 }
 .four {
   grid-area: four;
-  border-color: $yellow;
 }
