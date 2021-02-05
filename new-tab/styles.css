@@ -1,3 +1,15 @@
+main, #image, #time, #kanji, #kanji div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,8 +21,8 @@ html,
 body {
   width: 100%;
   height: 100%;
-  background-color: rgba(8, 7, 8, 0.5);
-  color: #e6e8e6;
+  background-color: rgba(8, 7, 8, 0.7);
+  color: #efefef;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,15 +47,6 @@ main {
   max-height: 800px;
   width: 100%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .yellow {
@@ -70,7 +73,7 @@ main {
       grid-template-columns: repeat(6, 180px);
   -ms-grid-rows: (150px)[4];
       grid-template-rows: repeat(4, 150px);
-      grid-template-areas: "one three three four four 0" "one two two four four 0" "- - - - - -" "- - - - - -";
+      grid-template-areas: "one two two four four 0" "one three three four four 0" "- - - - - -" "- - - - - -";
 }
 
 .box {
@@ -86,14 +89,14 @@ main {
 }
 
 .two {
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-column: 2;
   -ms-grid-column-span: 2;
   grid-area: two;
 }
 
 .three {
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-column: 2;
   -ms-grid-column-span: 2;
   grid-area: three;
@@ -112,15 +115,6 @@ main {
 */
 #image {
   overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 #image img {
@@ -128,16 +122,18 @@ main {
   height: 100%;
 }
 
+#time {
+  padding: 2rem;
+  font-family: "Noto Sans JP";
+  font-weight: 900;
+  font-size: 3rem;
+  text-align: center;
+}
+
 #kanji {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: space-evenly !important;
+      -ms-flex-pack: space-evenly !important;
+          justify-content: space-evenly !important;
   padding: 2rem;
   font-family: "Noto Sans JP";
   text-align: center;
@@ -149,15 +145,6 @@ main {
 }
 
 #kanji div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
