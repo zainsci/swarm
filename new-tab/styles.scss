@@ -1,7 +1,8 @@
 $dark: #080708;
-$blue: #01baef;
-$red: #df2935;
-$green: #20bf55;
+$blue: #08f7fe;
+$red: #fe53bb;
+$green: #09f8d3;
+$yellow: #f5d300;
 $text: #e6e8e6;
 
 * {
@@ -39,13 +40,16 @@ main {
 }
 
 .yellow {
-  border-color: $green !important;
+  border-color: $yellow !important;
 }
 .blue {
   border-color: $blue !important;
 }
 .red {
   border-color: $red !important;
+}
+.green {
+  border-color: $green !important;
 }
 
 .grid {

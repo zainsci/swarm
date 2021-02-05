@@ -47,15 +47,19 @@ main {
 }
 
 .yellow {
-  border-color: #20bf55 !important;
+  border-color: #f5d300 !important;
 }
 
 .blue {
-  border-color: #01baef !important;
+  border-color: #08f7fe !important;
 }
 
 .red {
-  border-color: #df2935 !important;
+  border-color: #fe53bb !important;
+}
+
+.green {
+  border-color: #09f8d3 !important;
 }
 
 .grid {

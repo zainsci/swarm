@@ -2,11 +2,11 @@ const noOfKanjiVocabFiles = 1030;
 const noOfImages = 17;
 
 // Add Random Colors to Boxes
-const colors = ["red", "yellow", "blue"];
+const colors = ["red", "yellow", "blue", "green"];
 let boxes = document.querySelectorAll(".box");
 
 boxes.forEach((box) => {
-  box.classList.add(colors[Math.floor(Math.random() * 3)]);
+  box.classList.add(colors[Math.floor(Math.random() * 4)]);
 });
 
 // Add Random Images from Media Folder
