@@ -24,18 +24,18 @@ fetch(`../media/vocab/${Math.floor(Math.random() * noOfKanjiVocabFiles)}.json`)
 
 function addVocab(data) {
   const vocabDiv = document.getElementById("kanji");
-  const h2 = document.createElement("h2");
+  const h1 = document.createElement("h1");
   const div = document.createElement("div");
-  const h4 = document.createElement("h4");
+  const h2 = document.createElement("h2");
   const p = document.createElement("p");
 
-  h2.innerHTML = data.vocab;
-  h4.innerHTML = data.hiragana;
+  h1.innerHTML = data.vocab;
+  h2.innerHTML = data.hiragana;
   p.innerHTML = data.english;
 
-  div.appendChild(h4);
+  div.appendChild(h2);
   div.appendChild(p);
 
-  vocabDiv.appendChild(h2);
+  vocabDiv.appendChild(h1);
   vocabDiv.appendChild(div);
 }

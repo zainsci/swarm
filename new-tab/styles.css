@@ -9,7 +9,7 @@ html,
 body {
   width: 100%;
   height: 100%;
-  background-color: #080708;
+  background-color: rgba(8, 7, 8, 0.5);
   color: #e6e8e6;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -20,6 +20,13 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+html {
+  background-image: url("../media/images/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 main {
@@ -40,11 +47,11 @@ main {
 }
 
 .yellow {
-  border-color: #fdca40 !important;
+  border-color: #20bf55 !important;
 }
 
 .blue {
-  border-color: #3772ff !important;
+  border-color: #01baef !important;
 }
 
 .red {
@@ -54,12 +61,12 @@ main {
 .grid {
   display: -ms-grid;
   display: grid;
-  gap: 12px;
+  gap: 1rem;
   -ms-grid-columns: (180px)[6];
       grid-template-columns: repeat(6, 180px);
-  -ms-grid-rows: (180px)[4];
-      grid-template-rows: repeat(4, 180px);
-      grid-template-areas: "one two two three three 0" "one two two four four 0" "- - - - - -" "- - - - - -";
+  -ms-grid-rows: (150px)[4];
+      grid-template-rows: repeat(4, 150px);
+      grid-template-areas: "one three three four four 0" "one two two four four 0" "- - - - - -" "- - - - - -";
 }
 
 .box {
@@ -75,8 +82,7 @@ main {
 }
 
 .two {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
+  -ms-grid-row: 2;
   -ms-grid-column: 2;
   -ms-grid-column-span: 2;
   grid-area: two;
@@ -84,18 +90,22 @@ main {
 
 .three {
   -ms-grid-row: 1;
-  -ms-grid-column: 4;
+  -ms-grid-column: 2;
   -ms-grid-column-span: 2;
   grid-area: three;
 }
 
 .four {
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
   -ms-grid-column: 4;
   -ms-grid-column-span: 2;
   grid-area: four;
 }
 
+/*
+ * Styling Boxes with IDs
+*/
 #image {
   overflow: hidden;
   display: -webkit-box;
@@ -112,4 +122,40 @@ main {
 #image img {
   width: auto;
   height: 100%;
+}
+
+#kanji {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem;
+  font-family: "Noto Sans JP";
+  text-align: center;
+  line-height: 1;
+}
+
+#kanji h1 {
+  font-size: 4rem;
+}
+
+#kanji div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }

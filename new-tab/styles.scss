@@ -1,7 +1,7 @@
 $dark: #080708;
-$blue: #3772ff;
+$blue: #01baef;
 $red: #df2935;
-$yellow: #fdca40;
+$green: #20bf55;
 $text: #e6e8e6;
 
 * {
@@ -14,11 +14,17 @@ html,
 body {
   width: 100%;
   height: 100%;
-  background-color: $dark;
+  background-color: rgba($dark, 0.5);
   color: $text;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+html {
+  background-image: url("../media/images/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 main {
@@ -33,7 +39,7 @@ main {
 }
 
 .yellow {
-  border-color: $yellow !important;
+  border-color: $green !important;
 }
 .blue {
   border-color: $blue !important;
@@ -44,11 +50,11 @@ main {
 
 .grid {
   display: grid;
-  gap: 12px;
+  gap: 1rem;
   grid-template-columns: repeat(6, 180px);
-  grid-template-rows: repeat(4, 180px);
+  grid-template-rows: repeat(4, 150px);
   grid-template-areas:
-    "one two two three three 0"
+    "one three three four four 0"
     "one two two four four 0"
     "- - - - - -"
     "- - - - - -";
@@ -71,6 +77,10 @@ main {
   grid-area: four;
 }
 
+/*
+ * Styling Boxes with IDs
+*/
+
 #image {
   overflow: hidden;
   display: flex;
@@ -79,5 +89,25 @@ main {
   img {
     width: auto;
     height: 100%;
+  }
+}
+
+#kanji {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2rem;
+  font-family: "Noto Sans JP";
+  text-align: center;
+  line-height: 1;
+
+  h1 {
+    font-size: 4rem;
+  }
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 }
