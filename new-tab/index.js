@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   img.src = `../media/images/${Math.floor(Math.random() * noOfImages)}.jpg`;
   image.appendChild(img);
 
-  // Add Random Kanji Vocab To Page
+  // Add Random Kanji Vocab
   fetch(
     `../media/vocab/${Math.floor(Math.random() * noOfKanjiVocabFiles)}.json`
   )
