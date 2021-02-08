@@ -206,14 +206,18 @@ main {
   -webkit-box-pack: space-evenly !important;
       -ms-flex-pack: space-evenly !important;
           justify-content: space-evenly !important;
-  padding: 2rem;
+  padding: 1rem;
   font-family: "Noto Sans JP";
   text-align: center;
   line-height: 1;
 }
 
 #Kanji h1 {
-  font-size: 4rem;
+  font-size: 3rem;
+}
+
+#Kanji h2 {
+  margin-bottom: 0.5rem;
 }
 
 #Kanji div {
