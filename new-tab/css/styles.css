@@ -68,11 +68,11 @@ main {
 #Toggle {
   width: 4.4rem;
   height: 2.4rem;
-  border: 2px solid currentColor;
+  border: 3px solid;
   border-radius: 999px;
   position: absolute;
-  top: 1rem;
-  right: 4rem;
+  top: 1.5rem;
+  right: 3.75rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -108,15 +108,23 @@ main {
 #Toggle button .sun {
   position: absolute;
   right: 0;
-  fill: #161b22;
-  stroke: #161b22;
+  fill: #ff9500 !important;
+  stroke: #ff9500 !important;
 }
 
 #Toggle button .moon {
   position: absolute;
   left: 0;
-  fill: #fafafa;
-  stroke: #fafafa;
+  fill: #007aff !important;
+  stroke: #007aff !important;
+}
+
+.light {
+  border-color: #ff9500 !important;
+}
+
+.dark {
+  border-color: #007aff !important;
 }
 
 /*

@@ -106,10 +106,12 @@ function themeChange() {
     body.className = "theme__dark";
     moon.style.display = "block";
     sun.style.display = "none";
+    document.getElementById("Toggle").className = "dark";
   }
   function setLightTheme() {
     body.className = "theme__light";
     moon.style.display = "none";
     sun.style.display = "block";
+    document.getElementById("Toggle").className = "light";
   }
 }
