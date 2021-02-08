@@ -1,3 +1,6 @@
+/*
+ * Constants For NewTab
+ */
 const noOfKanjiVocabFiles = 1030;
 const noOfImages = 17;
 const colors = [
@@ -13,19 +16,19 @@ const colors = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Add Random Colors to Boxes
+  // Random Border Color
   let boxes = document.querySelectorAll(".grid__item");
   boxes.forEach((box) => {
     box.classList.add(colors[Math.floor(Math.random() * colors.length)]);
   });
 
-  // Add Random Images from Media Folder
+  // Random Poster to Poster Section
   const image = document.getElementById("Poster");
   const img = document.createElement("img");
   img.src = `../media/images/${Math.floor(Math.random() * noOfImages)}.jpg`;
   image.appendChild(img);
 
-  // Add Random Kanji Vocab
+  // Fetch Random Kanji
   fetch(
     `../media/vocab/${Math.floor(Math.random() * noOfKanjiVocabFiles)}.json`
   )
@@ -34,10 +37,13 @@ document.addEventListener("DOMContentLoaded", () => {
       addVocab(data);
     });
 
-  //  Display Time
+  // Time
   realTime();
 });
 
+/*
+ * Add Vocabulary Word To NewTab
+ */
 function addVocab(data) {
   const vocabDiv = document.getElementById("Kanji");
   const h1 = document.createElement("h1");
@@ -56,6 +62,9 @@ function addVocab(data) {
   vocabDiv.appendChild(div);
 }
 
+/*
+ * Add RealTime to NewTab
+ */
 function realTime() {
   const date = new Date();
   document.getElementById("Time").innerText = date.toLocaleTimeString();

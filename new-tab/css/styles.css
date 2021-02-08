@@ -130,7 +130,7 @@ main {
 
 /*
  * Grid
-*/
+ */
 .grid {
   display: -ms-grid;
   display: grid;
@@ -139,7 +139,7 @@ main {
       grid-template-columns: repeat(6, 180px);
   -ms-grid-rows: (150px)[4];
       grid-template-rows: repeat(4, 150px);
-      grid-template-areas: "poster time time reader reader reader" "poster kanji kanji reader reader reader" "- - - icons icons icons" "- - - icons icons icons";
+      grid-template-areas: "poster time  time  reader reader reader" "poster kanji kanji reader reader reader" "-      -     -     icons  icons  icons" "-      -     -     icons  icons  icons";
 }
 
 .grid__item {
@@ -147,32 +147,9 @@ main {
   border-radius: 1rem !important;
 }
 
-.one {
-  grid-area: one;
-}
-
-.two {
-  grid-area: two;
-}
-
-.three {
-  grid-area: three;
-}
-
-.four {
-  grid-area: four;
-}
-
 /*
- * Buttons
-*/
-.button {
-  border: 3px solid;
-}
-
-/*
- * Styling Boxes with IDs
-*/
+ * Poster Section
+ */
 #Poster {
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
@@ -186,6 +163,9 @@ main {
   height: 100%;
 }
 
+/*
+ * Time Section
+ */
 #Time {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
@@ -198,6 +178,9 @@ main {
   text-align: center;
 }
 
+/*
+ * Kanji Section
+ */
 #Kanji {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
@@ -227,6 +210,9 @@ main {
           flex-direction: column;
 }
 
+/*
+ * Reader Section
+ */
 #Reader {
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
@@ -235,6 +221,9 @@ main {
   grid-area: reader;
 }
 
+/*
+ * Icons Section
+ */
 #Icons {
   -ms-grid-row: 3;
   -ms-grid-row-span: 2;
