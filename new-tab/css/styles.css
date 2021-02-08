@@ -1,3 +1,7 @@
+/*
+* Theme Color from Apple Visual Design Colors
+* https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/
+*/
 main, .icon a, #image, #time, #kanji, #kanji div {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -21,8 +25,8 @@ html,
 body {
   width: 100%;
   height: 100%;
-  background-color: rgba(8, 7, 8, 0.7);
-  color: #efefef;
+  background-color: #fafafa;
+  color: #1c1c1e;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,20 +53,76 @@ main {
   height: 100%;
 }
 
-.yellow {
-  border-color: #f5d300 !important;
-}
-
 .blue {
-  border-color: #08f7fe !important;
+  border-color: #007aff !important;
 }
 
-.red {
-  border-color: #fe53bb !important;
+.blue a {
+  color: #007aff !important;
 }
 
 .green {
-  border-color: #09f8d3 !important;
+  border-color: #34c759 !important;
+}
+
+.green a {
+  color: #34c759 !important;
+}
+
+.indigo {
+  border-color: #5856d6 !important;
+}
+
+.indigo a {
+  color: #5856d6 !important;
+}
+
+.orange {
+  border-color: #ff9500 !important;
+}
+
+.orange a {
+  color: #ff9500 !important;
+}
+
+.pink {
+  border-color: #ff2d55 !important;
+}
+
+.pink a {
+  color: #ff2d55 !important;
+}
+
+.purple {
+  border-color: #af52de !important;
+}
+
+.purple a {
+  color: #af52de !important;
+}
+
+.red {
+  border-color: #ff3b30 !important;
+}
+
+.red a {
+  color: #ff3b30 !important;
+}
+
+.teal {
+  border-color: #5ac8fa !important;
+}
+
+.teal a {
+  color: #5ac8fa !important;
+}
+
+.yellow {
+  border-color: #ffcc00 !important;
+}
+
+.yellow a {
+  color: #ffcc00 !important;
 }
 
 .grid {
@@ -73,12 +133,21 @@ main {
       grid-template-columns: repeat(6, 180px);
   -ms-grid-rows: (150px)[4];
       grid-template-rows: repeat(4, 150px);
-      grid-template-areas: "one two two four four 0" "one three three four four 0" "- - - - - -" "- - - - - -";
+      grid-template-areas: "one two two four four four" "one three three four four four" "- - - - - -" "- - - - - -";
 }
 
-.box {
-  border: 2px solid;
+.button {
+  border-width: 3px 3px 6px;
+  border-style: solid;
   border-radius: 1rem !important;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+.button:hover {
+  border: 3px solid;
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
 }
 
 .one {
@@ -106,7 +175,7 @@ main {
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   -ms-grid-column: 4;
-  -ms-grid-column-span: 2;
+  -ms-grid-column-span: 3;
   grid-area: four;
 }
 
@@ -121,13 +190,9 @@ main {
   font-size: 3rem;
   font-family: "Montserrat";
   line-height: 1;
-  color: #efefef;
+  color: #1c1c1e;
   -webkit-transition: 0.25s ease-in;
   transition: 0.25s ease-in;
-}
-
-.icon a:hover {
-  background-color: rgba(8, 7, 8, 0.5);
 }
 
 .icon svg {

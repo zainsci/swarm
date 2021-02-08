@@ -1,10 +1,20 @@
 const noOfKanjiVocabFiles = 1030;
 const noOfImages = 17;
-const colors = ["red", "yellow", "blue", "green"];
+const colors = [
+  "blue",
+  "green",
+  "indigo",
+  "orange",
+  "pink",
+  "purple",
+  "red",
+  "teal",
+  "yellow",
+];
 
 document.addEventListener("DOMContentLoaded", () => {
   // Add Random Colors to Boxes
-  let boxes = document.querySelectorAll(".box");
+  let boxes = document.querySelectorAll(".button");
   boxes.forEach((box) => {
     box.classList.add(colors[Math.floor(Math.random() * colors.length)]);
   });
