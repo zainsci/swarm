@@ -16,6 +16,9 @@ const colors = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Theme Setter and Toggler
+  themeChange();
+
   // Random Border Color
   let boxes = document.querySelectorAll(".grid__item");
   boxes.forEach((box) => {
@@ -69,4 +72,44 @@ function realTime() {
   const date = new Date();
   document.getElementById("Time").innerText = date.toLocaleTimeString();
   setTimeout(realTime, 1000);
+}
+
+function themeChange() {
+  const theme = window.localStorage.getItem("theme");
+  const body = document.body;
+
+  const toggleBtn = document.getElementById("Toggle");
+  const moon = document.querySelector(".moon");
+  const sun = document.querySelector(".sun");
+
+  if (theme) {
+    if (theme === "dark") {
+      setDarkTheme();
+    } else if (theme === "light") {
+      setLightTheme();
+    }
+  } else {
+    localStorage.setItem("theme", "light");
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    if (body.className === "theme__light") {
+      setDarkTheme();
+      localStorage.setItem("theme", "dark");
+    } else if (body.className === "theme__dark") {
+      setLightTheme();
+      localStorage.setItem("theme", "light");
+    }
+  });
+
+  function setDarkTheme() {
+    body.className = "theme__dark";
+    moon.style.display = "block";
+    sun.style.display = "none";
+  }
+  function setLightTheme() {
+    body.className = "theme__light";
+    moon.style.display = "none";
+    sun.style.display = "block";
+  }
 }
