@@ -14,13 +14,13 @@ const colors = [
 
 document.addEventListener("DOMContentLoaded", () => {
   // Add Random Colors to Boxes
-  let boxes = document.querySelectorAll(".button");
+  let boxes = document.querySelectorAll(".grid__item");
   boxes.forEach((box) => {
     box.classList.add(colors[Math.floor(Math.random() * colors.length)]);
   });
 
   // Add Random Images from Media Folder
-  const image = document.getElementById("image");
+  const image = document.getElementById("Poster");
   const img = document.createElement("img");
   img.src = `../media/images/${Math.floor(Math.random() * noOfImages)}.jpg`;
   image.appendChild(img);
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function addVocab(data) {
-  const vocabDiv = document.getElementById("kanji");
+  const vocabDiv = document.getElementById("Kanji");
   const h1 = document.createElement("h1");
   const div = document.createElement("div");
   const h2 = document.createElement("h2");
@@ -58,6 +58,6 @@ function addVocab(data) {
 
 function realTime() {
   const date = new Date();
-  document.getElementById("time").innerText = date.toLocaleTimeString();
+  document.getElementById("Time").innerText = date.toLocaleTimeString();
   setTimeout(realTime, 1000);
 }
