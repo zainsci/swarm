@@ -240,6 +240,34 @@ main {
  */
 #Reader {
   grid-area: reader;
+  padding: 1rem;
+  font-family: "Noto Sans JP";
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  .settings {
+    width: 100%;
+    height: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    &__chapter,
+    &__next {
+      height: 100%;
+    }
+  }
+  div {
+    overflow-y: scroll;
+    height: calc(100% - 3rem);
+  }
+  h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
 }
 
 /*
@@ -276,4 +304,17 @@ main {
       fill: currentColor;
     }
   }
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: lighten(#161b22, 10);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-track {
+  background-color: #161b22;
+}
+::-webkit-scrollbar {
+  background-color: #161b22;
+  height: 0.5rem;
+  width: 0.5rem;
 }

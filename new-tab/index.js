@@ -124,12 +124,14 @@ function themeChange() {
 // Add Chapter from Book
 function addChapter(data) {
   const reader = document.getElementById("Reader");
+  const div = document.createElement("div");
   const h3 = document.createElement("h3");
   const p = document.createElement("p");
 
   h3.innerHTML = data.title;
   p.innerHTML = data.body;
 
-  reader.appendChild(h3);
-  reader.appendChild(p);
+  div.appendChild(h3);
+  div.appendChild(p);
+  reader.appendChild(div);
 }
