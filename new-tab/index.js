@@ -28,13 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Random Poster to Poster Section
   const image = document.getElementById("Poster");
   const img = document.createElement("img");
-  img.src = `../media/images/${Math.floor(Math.random() * noOfImages)}.jpg`;
+  img.src = `./media/images/${Math.floor(Math.random() * noOfImages)}.jpg`;
   image.appendChild(img);
 
   // Fetch Random Kanji
-  fetch(
-    `../media/vocab/${Math.floor(Math.random() * noOfKanjiVocabFiles)}.json`
-  )
+  fetch(`./media/vocab/${Math.floor(Math.random() * noOfKanjiVocabFiles)}.json`)
     .then((data) => data.json())
     .then((data) => {
       addVocab(data);
