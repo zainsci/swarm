@@ -38,6 +38,13 @@ document.addEventListener("DOMContentLoaded", () => {
       addVocab(data);
     });
 
+  // Fetch Book Chapter
+  fetch("./media/book/0.json")
+    .then((data) => data.json())
+    .then((data) => {
+      addChapter(data);
+    });
+
   // Time
   realTime();
 });
@@ -112,4 +119,17 @@ function themeChange() {
     sun.style.display = "block";
     document.getElementById("Toggle").className = "light";
   }
+}
+
+// Add Chapter from Book
+function addChapter(data) {
+  const reader = document.getElementById("Reader");
+  const h3 = document.createElement("h3");
+  const p = document.createElement("p");
+
+  h3.innerHTML = data.title;
+  p.innerHTML = data.body;
+
+  reader.appendChild(h3);
+  reader.appendChild(p);
 }
