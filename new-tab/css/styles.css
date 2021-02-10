@@ -337,6 +337,7 @@ main {
 #Reader #Text {
   overflow-y: scroll;
   height: calc(100% - 3rem);
+  padding-right: 1rem;
 }
 
 #Reader h3 {

@@ -23,9 +23,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextBtn = document.getElementById("Next");
   nextBtn.onclick = () => {
     const chapter = window.localStorage.getItem("chapter");
-    const nextChapter = parseInt(chapter, 10) + 1;
-    window.localStorage.setItem("chapter", nextChapter);
-    addChapter(nextChapter, noOfChapters);
+    if (parseInt(chapter, 10) === noOfChapters) {
+      document.getElementById("Text").innerHTML =
+        "No More Chapters From This Book";
+    } else {
+      const nextChapter = parseInt(chapter, 10) + 1;
+      window.localStorage.setItem("chapter", nextChapter);
+      addChapter(nextChapter, noOfChapters);
+    }
   };
 
   themeChanger();
