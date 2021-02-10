@@ -3,6 +3,7 @@
  */
 const noOfKanjiVocabFiles = 1030;
 const noOfImages = 17;
+const noOfChapters = 72;
 const colors = [
   "blue",
   "green",
@@ -41,12 +42,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Fetch Book Chapter
   const chapter = window.localStorage.getItem("chapter");
   addChapter(chapter);
+
   const Next = document.getElementById("Next");
-  Next.addEventListener("click", () => {
+  Next.onclick = () => {
+    const chapter = window.localStorage.getItem("chapter");
     const nextChapter = parseInt(chapter, 10) + 1;
     window.localStorage.setItem("chapter", nextChapter);
     addChapter(nextChapter);
-  });
+  };
 
   // Time
   realTime();
@@ -124,10 +127,12 @@ function themeChange() {
   }
 }
 
-// Add Chapter from Book
+/*
+ * Book CHapter and Next
+ */
 function addChapter(chapter) {
   const Text = document.getElementById("Text");
-  const current = document.querySelector(".settings__chapter");
+  const current = document.getElementById("currentChapter");
   const p = document.createElement("p");
 
   if (chapter) {
@@ -135,7 +140,7 @@ function addChapter(chapter) {
       .then((data) => data.json())
       .then((data) => {
         p.innerHTML = data.body;
-        current.innerHTML = data.title;
+        current.innerHTML = data.title + `/${noOfChapters}`;
 
         Text.innerHTML = "";
         Text.appendChild(p);
@@ -147,7 +152,7 @@ function addChapter(chapter) {
       .then((data) => data.json())
       .then((data) => {
         p.innerHTML = data.body;
-        current.innerHTML = data.title;
+        current.innerHTML = data.title + `/${noOfChapters}`;
 
         Text.innerHTML = "";
         Text.appendChild(p);

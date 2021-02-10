@@ -316,11 +316,12 @@ main {
   font-weight: 600;
 }
 
-#Reader .settings__chapter, #Reader .settings__next {
+#Reader .settings #currentChapter {
   height: 100%;
 }
 
 #Reader .settings #Next {
+  height: 100%;
   padding: 0.5rem;
   background-color: transparent;
   color: currentColor;
