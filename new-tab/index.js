@@ -1,91 +1,111 @@
-/*
- * Constants For NewTab
- */
-const noOfKanjiVocabFiles = 1030;
-const noOfImages = 17;
-const noOfChapters = 72;
-const colors = [
-  "blue",
-  "green",
-  "indigo",
-  "orange",
-  "pink",
-  "purple",
-  "red",
-  "teal",
-  "yellow",
-];
-
 document.addEventListener("DOMContentLoaded", () => {
-  // Theme Setter and Toggler
-  themeChange();
+  const noOfKanjiVocabFiles = 1030;
+  const noOfImages = 17;
+  const noOfChapters = 72;
+  const colors = [
+    "blue",
+    "green",
+    "indigo",
+    "orange",
+    "pink",
+    "purple",
+    "red",
+    "teal",
+    "yellow",
+  ];
 
-  // Random Border Color
+  changeBorders(colors);
+  addPoster(noOfImages);
+  addTime();
+  addVocab(noOfKanjiVocabFiles);
+  addChapter(window.localStorage.getItem("chapter"), noOfChapters);
+
+  const nextBtn = document.getElementById("Next");
+  nextBtn.onclick = () => {
+    const chapter = window.localStorage.getItem("chapter");
+    const nextChapter = parseInt(chapter, 10) + 1;
+    window.localStorage.setItem("chapter", nextChapter);
+    addChapter(nextChapter, noOfChapters);
+  };
+
+  themeChanger();
+});
+
+function changeBorders(colors) {
   let boxes = document.querySelectorAll(".grid__item");
   boxes.forEach((box) => {
     box.classList.add(colors[Math.floor(Math.random() * colors.length)]);
   });
+}
 
-  // Random Poster to Poster Section
-  const image = document.getElementById("Poster");
+function addPoster(noOfImages) {
+  const Poster = document.getElementById("Poster");
   const img = document.createElement("img");
   img.src = `./media/images/${Math.floor(Math.random() * noOfImages)}.jpg`;
-  image.appendChild(img);
+  Poster.appendChild(img);
+}
 
-  // Fetch Random Kanji
+function addTime() {
+  const date = new Date();
+  document.getElementById("Time").innerText = date.toLocaleTimeString();
+  setTimeout(addTime, 1000);
+}
+
+function addVocab(noOfKanjiVocabFiles) {
   fetch(`./media/vocab/${Math.floor(Math.random() * noOfKanjiVocabFiles)}.json`)
     .then((data) => data.json())
     .then((data) => {
-      addVocab(data);
+      const vocabDiv = document.getElementById("Kanji");
+      const h1 = document.createElement("h1");
+      const div = document.createElement("div");
+      const h2 = document.createElement("h2");
+      const p = document.createElement("p");
+
+      h1.innerHTML = data.vocab;
+      h2.innerHTML = data.hiragana;
+      p.innerHTML = data.english;
+
+      div.appendChild(h2);
+      div.appendChild(p);
+
+      vocabDiv.appendChild(h1);
+      vocabDiv.appendChild(div);
     });
+}
 
-  // Fetch Book Chapter
-  const chapter = window.localStorage.getItem("chapter");
-  addChapter(chapter);
-
-  const Next = document.getElementById("Next");
-  Next.onclick = () => {
-    const chapter = window.localStorage.getItem("chapter");
-    const nextChapter = parseInt(chapter, 10) + 1;
-    window.localStorage.setItem("chapter", nextChapter);
-    addChapter(nextChapter);
-  };
-
-  // Time
-  realTime();
-});
-
-/*
- * Add Vocabulary Word To NewTab
- */
-function addVocab(data) {
-  const vocabDiv = document.getElementById("Kanji");
-  const h1 = document.createElement("h1");
-  const div = document.createElement("div");
-  const h2 = document.createElement("h2");
+function addChapter(chapter, noOfChapters) {
+  const Text = document.getElementById("Text");
+  const current = document.getElementById("currentChapter");
   const p = document.createElement("p");
 
-  h1.innerHTML = data.vocab;
-  h2.innerHTML = data.hiragana;
-  p.innerHTML = data.english;
+  if (chapter) {
+    fetch(`./media/book/${chapter}.json`)
+      .then((data) => data.json())
+      .then((data) => {
+        p.innerHTML = data.body;
+        current.innerHTML = data.title + `/${noOfChapters}`;
 
-  div.appendChild(h2);
-  div.appendChild(p);
+        Text.innerHTML = "";
+        Text.appendChild(p);
 
-  vocabDiv.appendChild(h1);
-  vocabDiv.appendChild(div);
+        window.localStorage.setItem("chapter", chapter);
+      });
+  } else {
+    fetch("./media/book/0.json")
+      .then((data) => data.json())
+      .then((data) => {
+        p.innerHTML = data.body;
+        current.innerHTML = data.title + `/${noOfChapters}`;
+
+        Text.innerHTML = "";
+        Text.appendChild(p);
+
+        window.localStorage.setItem("chapter", 0);
+      });
+  }
 }
 
-/*
- * Add RealTime to NewTab
- */
-function realTime() {
-  const date = new Date();
-  document.getElementById("Time").innerText = date.toLocaleTimeString();
-  setTimeout(realTime, 1000);
-}
-
-function themeChange() {
+function themeChanger() {
   const theme = window.localStorage.getItem("theme");
   const body = document.body;
 
@@ -124,40 +144,5 @@ function themeChange() {
     moon.style.display = "none";
     sun.style.display = "block";
     document.getElementById("Toggle").className = "light";
-  }
-}
-
-/*
- * Book CHapter and Next
- */
-function addChapter(chapter) {
-  const Text = document.getElementById("Text");
-  const current = document.getElementById("currentChapter");
-  const p = document.createElement("p");
-
-  if (chapter) {
-    fetch(`./media/book/${chapter}.json`)
-      .then((data) => data.json())
-      .then((data) => {
-        p.innerHTML = data.body;
-        current.innerHTML = data.title + `/${noOfChapters}`;
-
-        Text.innerHTML = "";
-        Text.appendChild(p);
-
-        window.localStorage.setItem("chapter", chapter);
-      });
-  } else {
-    fetch("./media/book/0.json")
-      .then((data) => data.json())
-      .then((data) => {
-        p.innerHTML = data.body;
-        current.innerHTML = data.title + `/${noOfChapters}`;
-
-        Text.innerHTML = "";
-        Text.appendChild(p);
-
-        window.localStorage.setItem("chapter", 0);
-      });
   }
 }
