@@ -53,6 +53,9 @@ main {
 }
 
 /*
+ * Scroll Bar Mixin
+ */
+/*
  * Light and Dark Themes
 */
 .theme__dark {
@@ -60,9 +63,43 @@ main {
   color: #fafafa !important;
 }
 
+.theme__dark ::-webkit-scrollbar-thumb {
+  background-color: #42424b;
+  border-radius: 999px;
+}
+
+.theme__dark ::-webkit-scrollbar-track {
+  background-color: #5a5a66;
+  border-radius: 999px;
+}
+
+.theme__dark ::-webkit-scrollbar {
+  background-color: #5a5a66;
+  border-radius: 999px;
+  height: 0.5rem;
+  width: 0.5rem;
+}
+
 .theme__light {
   background-color: #fafafa !important;
   color: #1c1c1e !important;
+}
+
+.theme__light ::-webkit-scrollbar-thumb {
+  background-color: #d2d2e4;
+  border-radius: 999px;
+}
+
+.theme__light ::-webkit-scrollbar-track {
+  background-color: #f2f2f7;
+  border-radius: 999px;
+}
+
+.theme__light ::-webkit-scrollbar {
+  background-color: #f2f2f7;
+  border-radius: 999px;
+  height: 0.5rem;
+  width: 0.5rem;
 }
 
 #Toggle {
@@ -392,21 +429,4 @@ main {
   width: 3rem;
   height: 3rem;
   fill: currentColor;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #bbb;
-  border-radius: 999px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: #eee;
-  border-radius: 999px;
-}
-
-::-webkit-scrollbar {
-  background-color: #eee;
-  border-radius: 999px;
-  height: 0.5rem;
-  width: 0.5rem;
 }
