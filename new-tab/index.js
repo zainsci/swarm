@@ -39,11 +39,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   // Fetch Book Chapter
-  fetch("./media/book/0.json")
-    .then((data) => data.json())
-    .then((data) => {
-      addChapter(data);
-    });
+  const chapter = window.localStorage.getItem("chapter");
+  addChapter(chapter);
+  document.getElementById("Next").addEventListener("click", () => {
+    const nextChapter = parseInt(chapter, 10) + 1;
+    window.localStorage.setItem("chapter", nextChapter);
+    addChapter(nextChapter);
+  });
 
   // Time
   realTime();
@@ -122,16 +124,34 @@ function themeChange() {
 }
 
 // Add Chapter from Book
-function addChapter(data) {
-  const reader = document.getElementById("Reader");
-  const div = document.createElement("div");
-  const h3 = document.createElement("h3");
+function addChapter(chapter) {
+  const Text = document.getElementById("Text");
+  const current = document.querySelector(".settings__chapter");
   const p = document.createElement("p");
 
-  h3.innerHTML = data.title;
-  p.innerHTML = data.body;
+  if (chapter) {
+    fetch(`./media/book/${chapter}.json`)
+      .then((data) => data.json())
+      .then((data) => {
+        p.innerHTML = data.body;
+        current.innerHTML = data.title;
 
-  div.appendChild(h3);
-  div.appendChild(p);
-  reader.appendChild(div);
+        Text.innerHTML = "";
+        Text.appendChild(p);
+
+        window.localStorage.setItem("chapter", chapter);
+      });
+  } else {
+    fetch("./media/book/0.json")
+      .then((data) => data.json())
+      .then((data) => {
+        p.innerHTML = data.body;
+        current.innerHTML = data.title;
+
+        Text.innerHTML = "";
+        Text.appendChild(p);
+
+        window.localStorage.setItem("chapter", 0);
+      });
+  }
 }
