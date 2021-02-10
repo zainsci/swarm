@@ -313,10 +313,24 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-weight: 600;
 }
 
 #Reader .settings__chapter, #Reader .settings__next {
   height: 100%;
+}
+
+#Reader .settings #Next {
+  padding: 0.5rem;
+  background-color: transparent;
+  color: currentColor;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+#Reader .settings #Next:active {
+  outline: none;
 }
 
 #Reader #Text {

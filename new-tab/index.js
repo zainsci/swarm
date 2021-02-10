@@ -41,7 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Fetch Book Chapter
   const chapter = window.localStorage.getItem("chapter");
   addChapter(chapter);
-  document.getElementById("Next").addEventListener("click", () => {
+  const Next = document.getElementById("Next");
+  Next.addEventListener("click", () => {
     const nextChapter = parseInt(chapter, 10) + 1;
     window.localStorage.setItem("chapter", nextChapter);
     addChapter(nextChapter);
