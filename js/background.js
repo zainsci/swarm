@@ -1,4 +1,4 @@
-const noOfAudios = 5;
+const noOfAudios = 17;
 
 chrome.action.onClicked.addListener(playAudio);
 
