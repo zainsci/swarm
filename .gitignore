@@ -1,6 +1,7 @@
 media/*/*.jpg
 media/*/*.json
 media/*/*.png
+media/*/*.mp3
 media/*.png
 media/*.mp3
 /new-tab/media/*/*.jpg
