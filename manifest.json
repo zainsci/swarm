@@ -17,5 +17,9 @@
     "scripts": ["js/background.js"],
     "persistent": true,
     "type": "module"
+  },
+  "action": {
+    "default_title": "Play Randome Audio!",
+    "default_icon": "media/icon.png"
   }
 }
