@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   addTime();
   addVocab(noOfKanjiVocabFiles);
   addChapter(window.localStorage.getItem("chapter"), noOfChapters);
+  addAudio();
 
   const nextBtn = document.getElementById("Next");
   nextBtn.onclick = () => {
@@ -108,6 +109,28 @@ function addChapter(chapter, noOfChapters) {
         window.localStorage.setItem("chapter", 0);
       });
   }
+}
+
+function addAudio() {
+  fetch("./media/audio.json")
+    .then((data) => data.json())
+    .then((data) => {
+      const audioImg = document.querySelector(".audio__img");
+      const audioTitle = document.querySelector(".audio__title");
+      const audioTrack = document.querySelector(".audio__track");
+
+      const img = document.createElement("img");
+      const audio = document.createElement("audio");
+
+      const randNum = Math.round(Math.random() * data.length);
+      img.src = data[randNum].img;
+      audio.src = data[randNum].track;
+      audio.controls = true;
+
+      audioImg.appendChild(img);
+      audioTitle.innerHTML = data[randNum].title;
+      audioTrack.appendChild(audio);
+    });
 }
 
 function themeChanger() {
