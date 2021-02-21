@@ -1,3 +1,3 @@
 # SWARM
 
-A little useful or completely distracting NewTabPage.
+A little useful or a very distracting NewTabPage.
