@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const noOfKanjiVocabFiles = 1030;
-  const noOfImages = 17;
-  const noOfChapters = 72;
+  const noOfKanjiVocabFiles = 1;
+  const noOfImages = 1;
+  const noOfChapters = 1;
   const colors = [
     "blue",
     "green",
