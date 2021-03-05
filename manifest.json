@@ -1,6 +1,6 @@
 {
-  "manifest_version": 2,
-  "name": "Aristotle",
+  "manifest_version": 3,
+  "name": "swarm",
   "version": "0.1",
   "description": "For Kanji Learning",
   "content_scripts": [
@@ -14,9 +14,7 @@
     "newtab": "/new-tab/index.html"
   },
   "background": {
-    "scripts": ["js/background.js"],
-    "persistent": true,
-    "type": "module"
+    "service_worker": "background.js"
   },
   "action": {
     "default_title": "Play Randome Audio!",
