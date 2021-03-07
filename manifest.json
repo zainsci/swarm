@@ -1,5 +1,5 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "swarm",
   "version": "0.1",
   "description": "For Kanji Learning",
@@ -14,9 +14,10 @@
     "newtab": "/new-tab/index.html"
   },
   "background": {
-    "service_worker": "background.js"
+    "scripts": ["background.js"],
+    "persistent": false
   },
-  "action": {
+  "browser_action": {
     "default_title": "Play Randome Audio!",
     "default_icon": "media/icon.png"
   }
