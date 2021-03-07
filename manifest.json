@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "swarm",
   "version": "0.1",
-  "description": "For Kanji Learning",
+  "description": "For Just Fun",
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
@@ -14,7 +14,7 @@
     "newtab": "/new-tab/index.html"
   },
   "background": {
-    "scripts": ["background.js"],
+    "scripts": ["js/background.js"],
     "persistent": false
   },
   "browser_action": {
