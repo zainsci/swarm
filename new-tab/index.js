@@ -123,7 +123,7 @@ function addQuote() {
       const quote = data[randNum];
 
       text.innerHTML = quote.text;
-      author.innerHTML = quote.author;
+      author.innerHTML = `-- ${quote.author}`;
     });
 }
 
