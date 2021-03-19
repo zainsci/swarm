@@ -9,8 +9,9 @@ Also Supports Dark Mode.
 2. Current Time
 3. Kanji
 4. Book Reader
-5. Audio
-6. Icon Links
+5. Quote
+6. Audio
+7. Icon Links
 
 #### Poster
 
@@ -32,6 +33,10 @@ The next button will change the chapter number and also the `window.localStorage
 
 Audio tab fetches another json file from the `./meida/` folder and selects randomly an audio from the json file and injects it into the HTML.
 
+#### Quote
+
+For quotations there is a json file which it fetches from the `./media/` and injects a random one from the list.
+
 #### Icon Links
 
 This lists displays all the most common website that i visit.
@@ -39,3 +44,9 @@ This lists displays all the most common website that i visit.
 ### Color Scheme
 
 Color Scheme is taken from Apple's [Website](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/)
+
+---
+
+#### Contributions
+
+Constributions to make it as much better as possible are welcomed.
