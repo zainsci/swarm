@@ -10,7 +10,7 @@ Also Supports Dark Mode.
 3. Kanji
 4. Book Reader
 5. Quote
-6. Audio
+6. News
 7. Icon Links
 
 #### Poster
@@ -29,9 +29,9 @@ Book Reader shows the current chapter of the book you are reading. I took a PDF 
 
 The next button will change the chapter number and also the `window.localStorage("chapter")` variable. Same goes for `noOfChapters` variable in the `index.js`.
 
-#### Audio
+#### News
 
-Audio tab fetches another json file from the `./meida/` folder and selects randomly an audio from the json file and injects it into the HTML.
+News tab fetches new stories from the HackerNews API and only shows the first 25 news stories from the response
 
 #### Quote
 

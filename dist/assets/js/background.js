@@ -1,1 +1,1 @@
-(()=>{var e={576:()=>{}},t={};function o(r){var i=t[r];if(void 0!==i)return i.exports;var s=t[r]={exports:{}};return e[r](s,s.exports,o),s.exports}(()=>{const e=o(576);let t;e.existsSync("../../dist/assets/media/audio")?e.readdir("../../dist/assets/media/audio",((e,o)=>{t=o.length})):t=0,chrome.browserAction.onClicked.addListener((function(){const e=Math.round(Math.random()*t);new Audio(`../media/audio/${e}.mp3`).play()}))})()})();
+chrome.browserAction.onClicked.addListener((function(){const o=Math.round(0*Math.random());new Audio(`assets/media/audio/${o}.mp3`).play()}));

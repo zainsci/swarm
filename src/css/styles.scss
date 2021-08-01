@@ -36,6 +36,20 @@ $colors: (
   align-items: center;
 }
 
+:root {
+  --font-size: 1rem;
+
+  @each $name, $color in $colors {
+    --#{$name}: #{$color};
+    .#{$name} {
+      border-color: var(--#{$name}) !important;
+      a {
+        color: var(--#{$name}) !important;
+      }
+    }
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -85,13 +99,19 @@ main {
  * Light and Dark Themes
 */
 .theme__dark {
+  --text: #fafafa;
+
   background-color: #161b22 !important;
-  color: #fafafa !important;
+  color: var(--text) !important;
+
   @include scrollBar($gray-dark);
 }
 .theme__light {
+  --text: $dark;
+
   background-color: #fafafa !important;
-  color: $dark !important;
+  color: var(--text) !important;
+
   @include scrollBar($gray-light);
 }
 #Toggle {
@@ -142,19 +162,6 @@ main {
 }
 
 /*
- * Coloring Borders
-*/
-
-@each $name, $color in $colors {
-  .#{$name} {
-    border-color: $color !important;
-    a {
-      color: $color !important;
-    }
-  }
-}
-
-/*
  * Grid
  */
 .grid {
@@ -165,8 +172,8 @@ main {
   grid-template-areas:
     "poster time  time  reader reader reader"
     "poster kanji kanji reader reader reader"
-    "quote  quote quote icons  icons  icons"
-    "audio  audio audio icons  icons  icons";
+    "news   news  news  icons  icons  icons"
+    "quote  quote quote icons  icons  icons";
 
   &__item {
     border: 3px solid;
@@ -290,37 +297,27 @@ main {
 }
 
 /*
- * Audio Section
+ * news Section
  */
-#Audio {
-  grid-area: audio;
-  padding: 2rem;
-  .audio {
-    width: 100%;
+#News {
+  grid-area: news;
+  padding: 1rem;
+  overflow: hidden;
+
+  #newsList {
     height: 100%;
     display: flex;
     flex-direction: column;
-    & > div {
-      height: 100%;
+    list-style: none;
+    overflow-y: scroll;
+
+    li {
+      margin-bottom: 0.25rem;
     }
-    img {
-      width: 100%;
-      height: auto;
-    }
-    &__title {
-      font-family: "Noto Sans JP";
-      font-weight: 500;
-      font-size: 1rem;
-      padding: 0.5rem 1rem;
-      overflow: hidden;
-    }
-    &__track {
-      grid-area: track;
-      audio {
-        margin-top: auto;
-        height: 100%;
-        width: 100%;
-      }
+    a {
+      font-size: var(--font-size);
+      text-decoration: none;
+      color: var(--text) !important;
     }
   }
 }

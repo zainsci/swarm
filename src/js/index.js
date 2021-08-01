@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   addVocab(noOfKanjiVocabFiles)
   addChapter(window.localStorage.getItem("chapter"), noOfChapters)
   addQuote()
-  addAudio()
+  addNews()
 
   const nextBtn = document.getElementById("Next")
   nextBtn.onclick = () => {
@@ -131,21 +131,33 @@ function addQuote() {
     })
 }
 
-function addAudio() {
-  fetch("assets/media/audio.json")
-    .then((data) => data.json())
+function addNews() {
+  const newsList = document.getElementById("newsList")
+
+  fetch("https://hacker-news.firebaseio.com/v0/newstories.json")
+    .then((res) => res.json())
     .then((data) => {
-      const audioTitle = document.querySelector(".audio__title")
-      const audioTrack = document.querySelector(".audio__track")
+      const bestStories = data.slice(0, 25)
 
-      const audio = document.createElement("audio")
+      bestStories.forEach((story) => {
+        fetch(`https://hacker-news.firebaseio.com/v0/item/${story}.json`)
+          .then((res) => res.json())
+          .then((data) => {
+            const li = document.createElement("li")
+            const title = document.createElement("a")
+            title.innerText = data.title
+            title.href = data.url
+            title.target = "_blank"
+            title.rel = "noopener noreferrer"
 
-      const randNum = Math.round(Math.random() * data.length) % data.length
-      audio.src = data[randNum].path
-      audio.controls = true
-
-      audioTitle.innerHTML = data[randNum].title
-      audioTrack.appendChild(audio)
+            li.appendChild(title)
+            newsList.appendChild(li)
+          })
+          .catch((e) => console.log(e))
+      })
+    })
+    .catch((e) => {
+      newsList.innerText(e)
     })
 }
 
