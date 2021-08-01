@@ -6,19 +6,19 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["js/content.js"]
+      "js": ["assets/js/content.js"]
     }
   ],
   "permissions": ["tabs", "activeTab"],
   "chrome_url_overrides": {
-    "newtab": "/new-tab/index.html"
+    "newtab": "index.html"
   },
   "background": {
-    "scripts": ["js/background.js"],
+    "scripts": ["assets/js/background.js"],
     "persistent": false
   },
   "browser_action": {
     "default_title": "Play Random Audio!",
-    "default_icon": "media/icon.png"
+    "default_icon": "assets/icon.png"
   }
 }

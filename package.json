@@ -1,0 +1,36 @@
+{
+  "name": "swarm",
+  "version": "1.0.0",
+  "description": "A little useful or a very distracting NewTabPage.\r Also Supports Dark Mode.",
+  "main": "",
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zainsci/swarm.git"
+  },
+  "keywords": [
+    "NewTabPage",
+    "Chrome Extension"
+  ],
+  "author": "zainsci",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zainsci/swarm/issues"
+  },
+  "homepage": "https://github.com/zainsci/swarm#readme",
+  "devDependencies": {
+    "css-loader": "^6.2.0",
+    "sass": "^1.37.0",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.47.1",
+    "webpack-cli": "^4.7.2"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  }
+}

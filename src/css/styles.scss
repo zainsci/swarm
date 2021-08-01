@@ -15,6 +15,21 @@ $dark: rgb(28, 28, 30);
 $gray-light: rgb(242, 242, 247);
 $gray-dark: rgb(90, 90, 102);
 
+$colors: (
+  "blue": $blue,
+  "green": $green,
+  "indigo": $indigo,
+  "orange": $orange,
+  "pink": $pink,
+  "purple": $purple,
+  "red": $red,
+  "teal": $teal,
+  "yellow": $yellow,
+  "dark": $dark,
+  "gray-light": $gray-light,
+  "gray-dark": $gray-dark,
+);
+
 %center {
   display: flex;
   justify-content: center;
@@ -34,12 +49,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-html {
-  background-image: url("../media/images/background.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 main {
@@ -135,58 +144,13 @@ main {
 /*
  * Coloring Borders
 */
-.blue {
-  border-color: $blue !important;
-  a {
-    color: $blue !important;
-  }
-}
-.green {
-  border-color: $green !important;
-  a {
-    color: $green !important;
-  }
-}
-.indigo {
-  border-color: $indigo !important;
-  a {
-    color: $indigo !important;
-  }
-}
-.orange {
-  border-color: $orange !important;
-  a {
-    color: $orange !important;
-  }
-}
-.pink {
-  border-color: $pink !important;
-  a {
-    color: $pink !important;
-  }
-}
-.purple {
-  border-color: $purple !important;
-  a {
-    color: $purple !important;
-  }
-}
-.red {
-  border-color: $red !important;
-  a {
-    color: $red !important;
-  }
-}
-.teal {
-  border-color: $teal !important;
-  a {
-    color: $teal !important;
-  }
-}
-.yellow {
-  border-color: $yellow !important;
-  a {
-    color: $yellow !important;
+
+@each $name, $color in $colors {
+  .#{$name} {
+    border-color: $color !important;
+    a {
+      color: $color !important;
+    }
   }
 }
 
