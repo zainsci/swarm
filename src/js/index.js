@@ -147,6 +147,8 @@ function addNews() {
             const title = document.createElement("a")
             title.innerText = data.title
             title.href = data.url
+              ? data.url
+              : `https://news.ycombinator.com/item?id=${data.id}`
             title.target = "_blank"
             title.rel = "noopener noreferrer"
 
