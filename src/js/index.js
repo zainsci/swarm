@@ -134,7 +134,7 @@ function addQuote() {
 function addNews() {
   const newsList = document.getElementById("newsList")
 
-  fetch("https://hacker-news.firebaseio.com/v0/newstories.json")
+  fetch("https://hacker-news.firebaseio.com/v0/topstories.json")
     .then((res) => res.json())
     .then((data) => {
       const bestStories = data.slice(0, 25)
