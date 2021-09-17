@@ -1,1 +1,0 @@
-chrome.browserAction.onClicked.addListener((function(){const o=Math.round(0*Math.random());new Audio(`assets/media/audio/${o}.mp3`).play()}));
